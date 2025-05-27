@@ -1,3 +1,4 @@
+#this file containes the database connection and session management code
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalcemy.ext.declarative import declertive_base
@@ -11,3 +12,4 @@ def init_db():
     
 def get_session():
     return Session()
+
