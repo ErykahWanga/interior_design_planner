@@ -18,3 +18,6 @@ class Category(Base):
     @classmethod
     def all(cls, session):
         return session.query(cls).all()
+
+    def __repr__(self):
+        return f"Category(id={self.id}, name='{self.name}')"
