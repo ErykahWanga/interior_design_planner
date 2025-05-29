@@ -27,6 +27,9 @@ class Room(Base):
         total = sum(f.cost for f in self.furniture)
         return total or 0.0
 
+    def area(self):
+        return self.length * self.width
+
     @classmethod
     def all(cls, session):
         return session.query(cls).all()
@@ -34,3 +37,6 @@ class Room(Base):
     @classmethod
     def find_by_id(cls, session, id):
         return session.query(cls).get(id)
+
+    def __repr__(self):
+        return f"Room(id={self.id}, name='{self.name}', area={self.area():.2f})"
