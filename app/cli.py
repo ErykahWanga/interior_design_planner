@@ -7,7 +7,7 @@ def main():
     init_db()
     session = get_session()
     
-    # Seed initial categories
+   
     if not Category.all(session):
         for name in ['Seating', 'Storage', 'Decor']:
             category = Category(name)
