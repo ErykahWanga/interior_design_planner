@@ -25,3 +25,6 @@ class Furniture(Base):
     def delete(self, session):
         session.delete(self)
         session.commit()
+
+    def __repr__(self):
+        return f"Furniture(id={self.id}, name='{self.name}', cost={self.cost})"
